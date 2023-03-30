@@ -1,0 +1,18 @@
+.header__logo {
+    margin: 0;
+    max-width: 142px;
+    max-height: 33px;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 390px) {
+    .header__logo {
+        margin-left: 22px;
+        max-width: 103.74px;
+        max-height: 24.4px;
+    }
+    #check:checked ~ .header__logo {
+        grid-area: 2;
+    }
+}
