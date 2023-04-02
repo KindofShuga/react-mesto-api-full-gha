@@ -24,7 +24,7 @@ export default function App() {
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
   const [isConfirmPopupOpen, setIsConfirmPopupOpen] = useState(false);
-  const [isFailInfoTooltip, setIsFailInfoTooltip] = useState(false);
+  const [isInfoTooltipPopupOpen, setIsInfoTooltipPopupOpen] = useState(false);
   const [isSuccessInfoTooltip, setIsSuccessInfoTooltip] = useState(false);
   const [selectedCard, setSelectedCard] = useState(null);
   const [selectedDeletedCard, setSelectedDeletedCard] = useState(null);
@@ -42,7 +42,7 @@ export default function App() {
         }
       })
       .catch(() => {
-        setIsFailInfoTooltip(true);
+        setIsInfoTooltipPopupOpen(true);
       });
   }
 
@@ -53,7 +53,7 @@ export default function App() {
         navigate("/sign-in");
       })
       .catch(() => {
-        setIsFailInfoTooltip(true);
+        setIsInfoTooltipPopupOpen(true);
       });
   }
 
@@ -109,8 +109,7 @@ export default function App() {
     setIsEditProfilePopupOpen(false);
     setIsAddPlacePopupOpen(false);
     setIsConfirmPopupOpen(false);
-    setIsFailInfoTooltip(false);
-    setIsSuccessInfoTooltip(false);
+    setIsInfoTooltipPopupOpen(false);
     setSelectedCard(null);
   }
 
@@ -210,7 +209,7 @@ export default function App() {
           deletedCard={selectedDeletedCard}
         />
         <InfoTooltip
-          isOpen={isSuccessInfoTooltip || isFailInfoTooltip}
+          isOpen={isInfoTooltipPopupOpen}
           onClose={closeAllPopups}
           isSuccessInfoTooltip={isSuccessInfoTooltip}
         />
