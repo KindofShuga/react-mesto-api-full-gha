@@ -52,7 +52,7 @@ const likeCard = (req, res, next) => {
     .orFail(() => {
       throw new ResourceNotFound();
     })
-    .then((card) => res.status(STATUS_OK).send({ data: card }))
+    .then((card) => res.status(STATUS_OK).send(card))
     .catch((err) => {
       if (err.name === 'CastError') {
         next(new BadRequest());
@@ -67,7 +67,7 @@ const dislikeCard = (req, res, next) => {
     .orFail(() => {
       throw new ResourceNotFound();
     })
-    .then((card) => res.status(STATUS_OK).send({ data: card }))
+    .then((card) => res.status(STATUS_OK).send(card))
     .catch((err) => {
       if (err.name === 'CastError') {
         next(new BadRequest());
