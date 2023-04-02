@@ -139,7 +139,7 @@ export default function App() {
         })
         .catch(err => console.log(`Ошибка: ${err}`));
     }
-  }, [navigate]);
+  }, []);
   useEffect(() => {
     if (loggedIn) {
       api.getUserAndCard()

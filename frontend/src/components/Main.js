@@ -21,7 +21,7 @@ export default function Main({ cards, onEditProfile, onAddPlace, onConfirm, onEd
             </section>
             <section>
                 <ul className="cards">
-                    {cards.map((card) => {
+                    {cards.reverse().map((card) => {
                         return <Card
                             cardInfo={card}
                             key={card._id}
