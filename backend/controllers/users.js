@@ -74,7 +74,7 @@ const updateUser = (req, res, next) => {
     .orFail(() => {
       throw new ResourceNotFound();
     })
-    .then((user) => res.status(STATUS_OK).send({ data: user }))
+    .then((user) => res.status(STATUS_OK).send(user))
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(new BadRequest());
@@ -90,7 +90,7 @@ const updateAvatar = (req, res, next) => {
     .orFail(() => {
       throw new ResourceNotFound();
     })
-    .then((user) => res.status(STATUS_OK).send({ data: user }))
+    .then((user) => res.status(STATUS_OK).send(user))
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(new BadRequest());
