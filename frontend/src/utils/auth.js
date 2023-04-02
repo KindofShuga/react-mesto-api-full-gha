@@ -1,4 +1,4 @@
-const BASE_URL = 'api.mesto.alinat.nomoredomains.work';
+const BASE_URL = 'https://api.mesto.alinat.nomoredomains.work';
 
 const getResponse = (res) => {
     return res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`);

@@ -72,7 +72,8 @@ class Api {
     }
 }
 const api = new Api({
-    baseUrl: 'api.mesto.alinat.nomoredomains.work',
+    baseUrl: 'https://api.mesto.alinat.nomoredomains.work',
+    // baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-55',
     // headers: {
     //     authorization: '1eff360a-a05c-459a-b944-dc645f17e291',
     //     'Content-Type': 'application/json'
