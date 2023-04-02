@@ -50,6 +50,7 @@ export default function App() {
     return auth.register(email, password)
       .then(() => {
         setIsSuccessInfoTooltip(true);
+        setIsInfoTooltipPopupOpen(true);
         navigate("/sign-in");
       })
       .catch(() => {
