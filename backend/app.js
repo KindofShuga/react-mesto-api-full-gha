@@ -1,9 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
-const cors = require('cors');
+// const cors = require('cors');
 const { errors } = require('celebrate');
-// const corsHandler = require('./middlewares/corsHandler');
+const corsHandler = require('./middlewares/corsHandler');
 const router = require('./routes/index');
 const { PORT, DB_ADDRESS } = require('./config');
 const errorHandler = require('./middlewares/errorHandler');
@@ -16,8 +16,8 @@ mongoose.set('strictQuery', false);
 
 app.use(express.json());
 app.use(helmet());
-app.use(cors({ origin: 'https://mesto.alinat.nomoredomains.work' }));
-// app.use(corsHandler);
+// app.use(cors({ origin: 'https://mesto.alinat.nomoredomains.work' }));
+app.use(corsHandler);
 app.use(requestLogger);
 app.get('/crash-test', () => {
   setTimeout(() => {
