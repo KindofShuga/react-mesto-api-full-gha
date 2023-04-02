@@ -2,7 +2,6 @@ import failIcon from '../images/fail-icon.svg';
 import successIcon from '../images/success-icon.svg';
 
 export default function InfoTooltip(props) {
-    console.log(props.isSuccessInfoTooltip)
     return (
         <div className={`popup ${props.isOpen ? 'popup__opened' : ''}`}>
             <div className="popup__container popup__container_center">

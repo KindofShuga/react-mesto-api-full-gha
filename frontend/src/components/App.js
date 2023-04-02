@@ -131,7 +131,6 @@ export default function App() {
     if (jwt) {
       auth.checkToken(jwt)
         .then((res) => {
-          console.log(res)
           if (res) {
             setLoggedIn(true);
             setUserEmail(res.email);
@@ -140,7 +139,7 @@ export default function App() {
         })
         .catch(err => console.log(`Ошибка: ${err}`));
     }
-  });
+  }, [navigate]);
   useEffect(() => {
     if (loggedIn) {
       api.getUserAndCard()
