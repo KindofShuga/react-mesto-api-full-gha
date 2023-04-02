@@ -118,7 +118,7 @@ export default function App() {
     setSelectedCard(card);
   }
   function handleCardLike(card) {
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
+    const isLiked = card.likes.some(i => i === currentUser._id);
     api.toggleLike(card._id, !isLiked)
       .then((likedCard) => {
         setCards((cardsArray) => cardsArray.map((oneCard) => oneCard._id === card._id ? likedCard : oneCard));
