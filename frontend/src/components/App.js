@@ -15,8 +15,6 @@ import InfoTooltip from './InfoTooltip'
 import api from '../utils/api';
 import * as auth from '../utils/auth'
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
-import failIcon from '../images/fail-icon.svg';
-import successIcon from '../images/success-icon.svg';
 
 export default function App() {
   const navigate = useNavigate();
@@ -59,20 +57,21 @@ export default function App() {
       });
   }
 
-  function tokenCheck() {
-    const jwt = localStorage.getItem('jwt');
-    if (jwt) {
-      auth.checkToken(jwt)
-        .then((res) => {
-          if (res) {
-            setLoggedIn(true);
-            setUserEmail(res.data.email);
-            navigate("/");
-          }
-        })
-        .catch(err => console.log(`Ошибка: ${err}`));
-    }
-  }
+  // function tokenCheck() {
+  //   const jwt = localStorage.getItem('jwt');
+  //   if (jwt) {
+  //     auth.checkToken(jwt)
+  //       .then((res) => {
+  //         console.log(res)
+  //         if (res) {
+  //           setLoggedIn(true);
+  //           setUserEmail(res.data.email);
+  //           navigate("/");
+  //         }
+  //       })
+  //       .catch(err => console.log(`Ошибка: ${err}`));
+  //   }
+  // }
 
   function handleEditProfileClick() {
     setIsEditProfilePopupOpen(true);
@@ -144,7 +143,22 @@ export default function App() {
   }
 
   useEffect(() => {
-    tokenCheck();
+    const jwt = localStorage.getItem('jwt');
+    if (jwt) {
+      auth.checkToken(jwt)
+        .then((res) => {
+          console.log(res)
+          if (res) {
+            setLoggedIn(true);
+            setUserEmail(res.data.email);
+            navigate("/");
+          }
+        })
+        .catch(err => console.log(`Ошибка: ${err}`));
+    }
+  });
+  useEffect(() => {
+    // tokenCheck();
     if (loggedIn) {
       api.getUserAndCard()
         .then(([user, cards]) => {
