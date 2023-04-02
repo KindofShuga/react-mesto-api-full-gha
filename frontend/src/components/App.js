@@ -57,22 +57,6 @@ export default function App() {
       });
   }
 
-  // function tokenCheck() {
-  //   const jwt = localStorage.getItem('jwt');
-  //   if (jwt) {
-  //     auth.checkToken(jwt)
-  //       .then((res) => {
-  //         console.log(res)
-  //         if (res) {
-  //           setLoggedIn(true);
-  //           setUserEmail(res.data.email);
-  //           navigate("/");
-  //         }
-  //       })
-  //       .catch(err => console.log(`Ошибка: ${err}`));
-  //   }
-  // }
-
   function handleEditProfileClick() {
     setIsEditProfilePopupOpen(true);
   }
@@ -150,7 +134,7 @@ export default function App() {
           console.log(res)
           if (res) {
             setLoggedIn(true);
-            setUserEmail(res.data.email);
+            setUserEmail(res.email);
             navigate("/");
           }
         })
@@ -158,7 +142,6 @@ export default function App() {
     }
   });
   useEffect(() => {
-    // tokenCheck();
     if (loggedIn) {
       api.getUserAndCard()
         .then(([user, cards]) => {
