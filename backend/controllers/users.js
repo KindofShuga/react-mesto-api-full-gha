@@ -5,7 +5,7 @@ const ResourceNotFound = require('../errors/ResourceNotFound');
 const BadRequest = require('../errors/BadRequest');
 const Conflicted = require('../errors/Conflicted');
 const { STATUS_OK, STATUS_CREATED } = require('../errors/statuses');
-const { JWT_SECRET } = require('../config');
+const { NODE_ENV, JWT_SECRET } = require('../config');
 
 const getUsers = (req, res, next) => {
   User.find({})
@@ -105,7 +105,11 @@ const login = (req, res, next) => {
 
   return User.findUserByCredentials(email, password)
     .then((user) => {
-      const token = jwt.sign({ _id: user._id }, JWT_SECRET, { expiresIn: '7d' });
+      const token = jwt.sign(
+        { _id: user._id },
+        NODE_ENV === 'production' ? JWT_SECRET : 'some-secret-key',
+        { expiresIn: '7d' },
+      );
       res.status(STATUS_OK).send({ user, token });
     })
     .catch(next);
