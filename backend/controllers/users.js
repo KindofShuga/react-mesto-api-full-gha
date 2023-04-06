@@ -5,7 +5,8 @@ const ResourceNotFound = require('../errors/ResourceNotFound');
 const BadRequest = require('../errors/BadRequest');
 const Conflicted = require('../errors/Conflicted');
 const { STATUS_OK, STATUS_CREATED } = require('../errors/statuses');
-const { NODE_ENV, JWT_SECRET } = require('../config');
+
+const { NODE_ENV, JWT_SECRET } = process.env;
 
 const getUsers = (req, res, next) => {
   User.find({})
