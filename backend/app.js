@@ -17,7 +17,6 @@ mongoose.set('strictQuery', false);
 
 app.use(express.json());
 app.use(helmet());
-// app.use(cors({ origin: 'https://mesto.alinat.nomoredomains.work' }));
 app.use(corsHandler);
 app.use(requestLogger);
 app.get('/crash-test', () => {
