@@ -69,6 +69,6 @@ ____
 
 ## :link: Ссылки:
 
-IP 158.160.17.189
-Frontend https://mesto.alinat.nomoredomains.work
+IP 158.160.17.189  
+Frontend https://mesto.alinat.nomoredomains.work  
 Backend https://api.mesto.alinat.nomoredomains.work
