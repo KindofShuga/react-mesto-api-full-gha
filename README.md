@@ -1,5 +1,6 @@
 [![Tests](https://github.com/KindofShuga/react-mesto-api-full-gha/actions/workflows/tests.yml/badge.svg)](https://github.com/KindofShuga/react-mesto-api-full-gha/actions/workflows/tests.yml)
 # Проект Mesto
+## `Сайт приостановлен.`
 Репозиторий для проекта `Mesto`, включающий фронтенд и бэкенд части приложения со следующими возможностями:
 - Авторизация и регистрация пользователей.
 - Подтягивание карточек других пользователей.
