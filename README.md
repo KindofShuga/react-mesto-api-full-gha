@@ -13,7 +13,7 @@
 ___
 
 ### :wrench: __Технологии:__
-[![Технологии](https://skillicons.dev/icons?i=html,css,webpack,react,js,git,figma,nodejs,express,nginx,mongodb,git)](https://skillicons.dev)  
+[![Технологии](https://skillicons.dev/icons?i=html,css,webpack,react,js,git,figma,nodejs,express,nginx,mongodb)](https://skillicons.dev)  
 - [`Yandex.Cloud`](https://cloud.yandex.ru/services/compute) — Виртуальная машина.
 - `Ubuntu` — ОС.
 - `pm2` — Менеджер процессов на сервере.
